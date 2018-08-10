@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<log4php:configuration xmlns:log4php="http://www.vxr.it/log4php/"
+  threshold="all" debug="false">
+
+  <appender name="default" class="LoggerAppenderEcho">
+    <layout class="LoggerLayoutHtml" />
+  </appender>
+  <appender name="development" class="LoggerAppenderRollingFile">
+    <layout class="LoggerLayoutPattern" />
+    <param name="file" value="C:\wwwroot\zend_login_template\log/development.log" />
+    <param name="maxFileSize" value="10MB" />
+    <param name="maxBackupIndex" value="10" />
+  </appender>
+  <appender name="testing" class="LoggerAppenderRollingFile">
+    <layout class="LoggerLayoutPattern" />
+    <param name="file" value="C:\wwwroot\zend_login_template\log/development.log" />
+    <param name="maxFileSize" value="10MB" />
+    <param name="maxBackupIndex" value="10" />
+  </appender>
+  <appender name="production" class="LoggerAppenderRollingFile">
+    <layout class="LoggerLayoutPattern" />
+    <param name="file" value="C:\wwwroot\zend_login_template\log/development.log" />
+    <param name="maxFileSize" value="10MB" />
+    <param name="maxBackupIndex" value="10" />
+  </appender>
+
+  <logger name="development" additivity="false">
+    <appender_ref ref="development" />
+  </logger>
+  <logger name="testing" additivity="false">
+    <appender_ref ref="testing" />
+  </logger>
+  <logger name="production" additivity="false">
+    <appender_ref ref="production" />
+  </logger>
+
+  <root>
+    <level value="DEBUG" />
+    <appender_ref ref="default" />
+  </root>
+
+</log4php:configuration>

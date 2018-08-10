@@ -1,0 +1,69 @@
+<form method="POST">
+<?php
+    $keys = array_keys($config);
+    printConfiguration($config, $keys);
+?>
+	<input type="submit" class="btn btn-lg btn-primary" value="Speichern">
+	<button class="btn btn-lg btn-danger" type="reset" style="float:right;">Verwerfen</button>
+</form>
+<?php
+
+function printConfiguration($config,$keys)
+{
+    foreach($keys as $key)
+    {
+         printKeysRecursive($config, $key, $key);
+    }
+}
+
+function printKeysRecursive($array, $key, $name)
+{
+    if(is_array($array))
+    {
+        //rekursionsende
+        if(!is_array($array[$key]))
+        {
+            if($key != 'password')
+                printKeyValue($key, $array[$key], $name);
+            else
+                printPasswordValue($key, $array[$key], $name);
+            return;
+        }
+        
+        $newKeys = array_keys($array[$key]);
+        //var_dump($newKeys);
+        ?>
+            <div class="panel panel-default" style="padding:20px;">        
+        		<label for="usr" style="border:1;"><?php echo $key; ?></label>
+        		<?php
+        foreach($newKeys as $newKey)
+        {         
+            $newName = ($name . '-' . $newKey);
+            printKeysRecursive($array[$key], $newKey, $newName);
+        }
+        ?>
+            </div>
+            <?php
+    }
+    //rekursionsende   
+}
+
+function printKeyValue($key, $value, $name)
+{
+    ?>
+        <div class="form-group" style="padding-left:20px;padding-right:20px;padding-bottom: 0px;padding-top: 0px; margin-top:10px;">
+          <label for="<?php echo $key;?>"><?php echo $key; ?></label>
+          <input type="text" class="form-control" value="<?php echo $value;?>" id="<?php echo $key;?>" name="<?php echo $name;?>">
+        </div> 
+    <?php
+}
+
+function printPasswordValue($key, $value, $name)
+{
+        ?>
+        <div class="form-group" style="padding-left:20px;padding-right:20px;padding-bottom: 0px;padding-top: 0px; margin-top:10px;">
+          <label for="<?php echo $key;?>"><?php echo $key; ?></label>
+          <input type="password" class="form-control" value="<?php echo $value;?>" id="<?php echo $key;?>" name="<?php echo $name;?>">
+        </div> 
+    <?php
+}

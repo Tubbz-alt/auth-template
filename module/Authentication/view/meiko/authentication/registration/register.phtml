@@ -1,0 +1,25 @@
+<div class="row">
+<div class="col-md-offset-2 col-md-6">
+<?php if (!$success): ?>
+            <div class="alert alert-danger" role="alert">
+                Account bereits vorhanden! <a href=/reset>Passwort zurücksetzen</a>
+            </div>
+	<?php endif; ?>
+<form class="form-signin" method="post">
+<h2 class="form-signin-heading">Registrieren</h2>
+            <h3 style="text-align:left;">Name <span class="label label-default"></span></h3>
+            <div class="input-group">
+              <input name="username" type="text" class="form-control" aria-label="Password" placeholder="Anmeldename">
+              <span class="input-group-addon"></span>
+            </div>
+            <br>
+            <h3 style="text-align:left;">Passwort <span class="label label-default"></span></h3>
+            <div class="input-group">
+              <input name="password" type="password" class="form-control" aria-label="Password"  placeholder="Passwort">
+              <span class="input-group-addon"></span>
+            </div>
+            <br>
+            <button class="btn btn-lg btn-primary btn-block" type="submit" >Registrieren</button>
+        </form>
+    </div>
+</div>

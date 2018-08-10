@@ -1,0 +1,42 @@
+;Copy this file and rename it meiko.config.ini if you don't have an existing config file
+
+authentication.method = 'NTLM'
+authentication.registration = false
+crypto.options.cost = 12
+
+database.config.driver = 'Mysqli'
+database.config.database =
+database.config.hostname =
+database.config.username =
+database.config.password =
+database.config.charset =
+
+database.usertable = 'user'
+database.password_column = 'password'
+database.username_column = 'username'
+
+ldap.config.server1.host =
+ldap.config.server1.port =
+ldap.config.server1.accountDomainName = 'meiko.local'
+ldap.config.server1.accountDomainNameShort = 'MEIKO'
+ldap.config.server1.accountCanonicalForm = 3
+ldap.config.server1.username =
+ldap.config.server1.password =
+ldap.config.server1.baseDn = 'OU=Migration,DC=meiko,DC=local'
+
+ntlm.config.host =
+ntlm.config.port =
+ntlm.config.accountDomainName = 'meiko.local'
+ntlm.config.accountDomainNameShort = 'MEIKO'
+ntlm.config.accountCanonicalForm = 3
+ntlm.config.username =
+ntlm.config.password =
+ntlm.config.baseDn =
+
+session.config.remember_me_seconds = 2592000
+session.config.cookie_domain = 'MEIKO'
+session.config.name = 'Login'
+session.config.use_cookies = true
+session.config.cache_expire = 1440
+
+eventhandler.classname = 'Meiko\Authentication\Event\DefaultLoginEvent';class must implement LoginEventI interface

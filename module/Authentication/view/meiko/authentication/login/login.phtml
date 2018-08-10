@@ -1,0 +1,53 @@
+<?php
+use Zend\Form\Element;
+
+$label = new Element();
+$label->setLabel('Label')
+->setAttribute('id', 'text-id')
+->setLabelAttributes(array('class' => 'control-label'));
+
+/*@Deprecated
+ * used to disable or enable login
+ */
+$enableForm;
+if($this->isAuth)
+    $enableForm = 'disabled';
+else $enableForm = 'enabled';
+
+
+?>
+<div class="row">
+<div class="col-md-offset-2 col-md-6">
+<form class="form-signin" method="post">
+<h2 class="form-signin-heading">Login</h2>
+	<?php if ($isLoginError): ?>
+            <div class="alert alert-danger" role="alert">
+                Falscher Anmeldename oder Passwort!
+            </div>
+	<?php endif; ?>
+		<?php if ($this->isAuth): ?>
+            <div class="alert alert-info" role="alert">
+                Bereits angemeldet als <b> <?php echo $this->userName; ?></b> <br>
+            </div>
+            <div>
+				<input class="btn btn-lg btn-danger btn-block" type="button" value="Ausloggen" onclick="window.location.href='/auth/logout'" />
+            </div>
+	<?php else: ?>
+            <h3 style="text-align:left;">Name <span class="label label-default"></span></h3>
+            <div class="input-group">
+              <input name="username" type="text" class="form-control" aria-label="Password" placeholder="Anmeldename" <?php echo $enableForm;?>>
+              <span class="input-group-addon"></span>
+            </div>
+            <br>
+            <h3 style="text-align:left;">Passwort <span class="label label-default"></span></h3>
+            <div class="input-group">
+              <input name="password" type="password" class="form-control" aria-label="Password"  placeholder="Passwort" <?php echo $enableForm;?>>
+              <span class="input-group-addon"></span>
+            </div>
+            <br>
+            <input type="hidden" name="redirectUrl" value="<?php echo $this->redirectUrl;?>">
+            <button class="btn btn-lg btn-primary btn-block" type="submit"  <?php echo $enableForm;?> >Anmelden</button>
+        </form>
+   <?php endif; ?>
+    </div>
+</div>
