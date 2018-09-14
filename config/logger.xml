@@ -7,19 +7,19 @@
   </appender>
   <appender name="development" class="LoggerAppenderRollingFile">
     <layout class="LoggerLayoutPattern" />
-    <param name="file" value="C:\wwwroot\zend_login_template\log/development.log" />
+    <param name="file" value="log/development.log" />
     <param name="maxFileSize" value="10MB" />
     <param name="maxBackupIndex" value="10" />
   </appender>
   <appender name="testing" class="LoggerAppenderRollingFile">
     <layout class="LoggerLayoutPattern" />
-    <param name="file" value="C:\wwwroot\zend_login_template\log/development.log" />
+    <param name="file" value="log/testing.log" />
     <param name="maxFileSize" value="10MB" />
     <param name="maxBackupIndex" value="10" />
   </appender>
   <appender name="production" class="LoggerAppenderRollingFile">
     <layout class="LoggerLayoutPattern" />
-    <param name="file" value="C:\wwwroot\zend_login_template\log/development.log" />
+    <param name="file" value="log/production.log" />
     <param name="maxFileSize" value="10MB" />
     <param name="maxBackupIndex" value="10" />
   </appender>
