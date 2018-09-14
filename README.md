@@ -7,11 +7,11 @@ Zend Framework MVC layer and module systems.
 
 ## Installation using Composer
 
-The easiest way to create a new Zend Framework project is to use
+The easiest way to create project with this template is to use
 [Composer](https://getcomposer.org/).  If you don't have it already installed,
 then please install as per the [documentation](https://getcomposer.org/doc/00-intro.md).
 
-To create your new Zend Framework project:
+To create your new project:
 
 ```bash
 $ composer create-project meiko-kod/auth path/to/install
