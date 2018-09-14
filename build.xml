@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Composer Targets" default="build">  
+
+  <target name="update">
+    <exec executable="composer.bat">
+	  <arg line="update"/>
+    </exec>
+  </target>
+  
+  <target name="dump">
+	<exec executable="composer.bat">
+      <arg line="dump-auto -o"/>
+    </exec>
+  </target>
+
+  <target name="build" depends="update,dump">
+  </target>
+  
+</project>

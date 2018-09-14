@@ -7,3 +7,4 @@ phpunit.xml
 
 .svn/*
 vendor/
+config/meiko.config.ini
