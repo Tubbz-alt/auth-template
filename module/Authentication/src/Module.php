@@ -31,7 +31,7 @@ class Module
       $eventManager->attach(MvcEvent::EVENT_DISPATCH, array(
             $this,
             'protectPage'
-      ), 100);
+      ), 99);
       
       if(! Reader::read('authentication', 'registration'))
       {
