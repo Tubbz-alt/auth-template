@@ -9,6 +9,9 @@ namespace Meiko\Authentication\Model;
 
 use Meiko\Helper\BasicEnum;
 
+/*
+ * Abstract class with contains all valid authentication methods as constants.
+ */
 abstract class AuthenticationMethod extends BasicEnum
 {
 

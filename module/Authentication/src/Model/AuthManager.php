@@ -15,6 +15,9 @@ use Meiko\Helper\ConfigReader;
 use Meiko\Authentication\Helper\LoginEventManager;
 use Meiko\Helper\Log;
 
+/*
+ * Authorization abstraction. Used to handle all kinds of authentications
+ */
 class AuthManager
 {
 
@@ -75,6 +78,9 @@ class AuthManager
         return $adapter;
     }
 
+    /*
+     * Authenticate a user
+     */
     public function authenticate(string $username = null, string $password = null)
     {
         $this->log->info(AuthManager::class, 'User ' . $username . ' trying to authenticate...');
@@ -93,16 +99,25 @@ class AuthManager
         return false;
     }
 
+    /*
+     * Returns Identity of user
+     */
     public function getIdentity()
     {
         return $this->authService->getIdentity();
     }
 
+    /*
+     * Clears the Identity from persistend storage (defaults to session storage)
+     */
     public function clearIdentity()
     {
         return $this->authService->clearIdentity();
     }
 
+    /*
+     * Returns true if an identity from storage is available (defaults to session storage)
+     */
     public function hasIdentity()
     {
         return $this->authService->hasIdentity();

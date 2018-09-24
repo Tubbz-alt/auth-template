@@ -42,6 +42,11 @@ class Module
       }
    }
 
+   /*
+    * Checks if user is authenticated on every called page by storage (session).
+    * If not user will be forced to login based on config (or is automatically logged in by NTLM).
+    * Is called on every every dispatch event.
+    */
    public function protectPage(MvcEvent $event)
    {
       $controllerName=$event->getRouteMatch()->getParam('controller', null);
@@ -89,12 +94,17 @@ class Module
       }
    }
 
+   /*
+    * Redirects call from registration to login controller if registration is disabled in config file.
+    * Is called on every dispatch
+    */
    public function redirectRegistration(MvcEvent $event)
    {
       $controllerName=$event->getRouteMatch()->getParam('controller', null);
       
       if($controllerName == RegistrationController::class)
       {
+         //$event->stopPropagation(true); TODO: Check if this needs to be here
          $authService=$event->getApplication()->getServiceManager()->get(AuthenticationService::class);
          $authManager=new AuthManager($authService);
          $event->setControllerClass(LoginController::class);
