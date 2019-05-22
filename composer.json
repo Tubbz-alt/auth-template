@@ -28,8 +28,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Meiko\\Authentication\\": "module/Authentication/src/",
-			"Meiko\\Helper\\": "vendor/meiko-kod/Helper/src/"
+            "Meiko\\Authentication\\": "module/Authentication/src/"
         }
     },
     "autoload-dev": {
