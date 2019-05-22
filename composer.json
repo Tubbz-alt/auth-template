@@ -15,27 +15,16 @@
         "php": "^7.0",
         "zendframework/zend-component-installer": "^1.0 || ^0.7 || ^1.0.0-dev@dev",
         "zendframework/zend-mvc": "^3.0.1",
-        "zfcampus/zf-development-mode": "^3.0",
-        "zendframework/zend-cache": "^2.7.1",
         "zendframework/zend-db": "^2.9",
-        "zendframework/zend-mvc-form": "^1.0",
-        "zendframework/zend-json": "^3.0",
         "zendframework/zend-log": "^2.9",
-        "zendframework/zend-mvc-console": "^1.1.10",
         "zendframework/zend-mvc-i18n": "^1.0",
         "zendframework/zend-mvc-plugins": "^1.0.1",
         "zendframework/zend-psr7bridge": "^0.2.2",
         "zendframework/zend-session": "^2.7.1",
         "zendframework/zend-servicemanager-di": "^1.0",
         "zendframework/zend-authentication": "^2.6",
-        "pdepend/pdepend": "^2.5",
-        "squizlabs/php_codesniffer": "^3.2",
-        "sebastian/phpcpd": "^3.0",
-        "theseer/phpdox": "^0.10.1",
-        "phploc/phploc": "^4.0",
-        "phpmd/phpmd": "^2.6",
         "zendframework/zend-ldap": "^2.9",
-        "meiko-kod/helper": "dev-master"
+        "meiko-kod/helper": "^1.0"
     },
     "autoload": {
         "psr-4": {
